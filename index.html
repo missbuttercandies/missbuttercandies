@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <title>MissButter Candies｜牛轧糖选购页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- 品牌字体：Lobster + Quicksand + Noto Sans Rounded + Ma Shan Zheng -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ma+Shan+Zheng&family=Quicksand:wght@500;600;700&family=Noto+Sans+Rounded:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #ffd7e8;
+      --pink-deep: #ff8ba7;
+      --peach: #ffbfa3;
+      --mint: #9fe2d4;
+      --cream: #fff9f2;
+      --text-main: #4c3b4d;
+      --shadow-soft: 0 16px 40px rgba(0,0,0,0.08);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Noto Sans Rounded", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #ffeaf4 0, #fff 45%, #fff9f2 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 14px 56px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 10px 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 96px;
+      height: 96px;
+      border-radius: var(--radius-pill);
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.9);
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .brand-text h1 {
+      font-family: "Lobster", cursive;
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      text-transform: none;
+      margin-bottom: 4px;
+    }
+
+    .brand-text span {
+      font-family: "Quicksand", sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      opacity: .8;
+    }
+
+    .pill {
+      border-radius: var(--radius-pill);
+      padding: 8px 14px;
+      background: rgba(255, 192, 203, 0.28);
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px dashed rgba(255, 143, 167, 0.45);
+      backdrop-filter: blur(8px);
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 8px rgba(159, 226, 212, 0.9);
+    }
+
+    /* Hero */
+    .hero {
+      margin-top: 6px;
+      padding: 36px 20px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #ffe3ef 0%, #fff2e1 35%, #fff9f5 100%);
+      box-shadow: 0 22px 40px rgba(255, 155, 180, 0.18);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 3.2fr) minmax(0, 2.1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: rgba(255, 182, 193, 0.18);
+      border-radius: 50%;
+      filter: blur(40px);
+      pointer-events: none;
+    }
+    .hero::before { top: -40px; left: -40px; }
+    .hero::after { bottom: -40px; right: -40px; }
+
+    .hero-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-family: "Ma Shan Zheng", "Noto Sans Rounded", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+
+    .hero-title span {
+      color: var(--pink-deep);
+    }
+
+    .hero-sub {
+      font-family: "Noto Sans Rounded", sans-serif;
+      font-size: 15px;
+      opacity: .9;
+      margin-bottom: 18px;
+      line-height: 1.55;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+      font-size: 12px;
+    }
+
+    .hero-tag {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+
+    .hero-tag::before {
+      content: "·";
+      opacity: 0.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: flex-start;
+    }
+
+    .hero-note {
+      font-size: 11px;
+      opacity: 0.75;
+    }
+
+    .hero-side {
+      border-radius: 20px;
+      background: rgba(255,255,255,0.9);
+      padding: 16px 16px 14px;
+      border: 1px solid rgba(255,255,255,0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-side-title {
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: "Quicksand", sans-serif;
+    }
+
+    .hero-side-title span.icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: rgba(255, 139, 167, 0.15);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .hero-side-list {
+      font-size: 11px;
+      opacity: 0.85;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .hero-side-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .hero-side-list li::before {
+      content: "✓";
+      font-size: 11px;
+      margin-top: 1px;
+      color: var(--pink-deep);
+    }
+
+    /* 动态文字：立即选购牛轧糖 */
+    .hero-dynamic-text {
+      font-size: 20px;
+      font-family: "Quicksand", sans-serif;
+      font-weight: 700;
+      background: linear-gradient(120deg, #ff8bb0, #ffb86c);
+      -webkit-background-clip: text;
+      color: transparent;
+      cursor: pointer;
+      display: inline-block;
+      animation: textBounce 1.6s ease infinite;
+    }
+
+    @keyframes textBounce {
+      0%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-4px); }
+      60% { transform: translateY(1px); }
+    }
+
+    .hero-dynamic-text:hover {
+      filter: brightness(1.05);
+    }
+
+    /* Buttons & Inputs */
+    .btn {
+      border-radius: var(--radius-pill);
+      padding: 10px 18px;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        background 0.12s ease,
+        opacity 0.1s ease;
+      font-family: "Noto Sans Rounded", sans-serif;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff8ba7, #ffb86c);
+      color: #fff;
+      box-shadow: 0 10px 18px rgba(255, 137, 166, 0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 24px rgba(255, 137, 166, 0.55);
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.85);
+      border: 1px dashed rgba(255, 143, 167, 0.6);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,1);
+    }
+
+    .btn-small {
+      padding: 7px 12px;
+      font-size: 12px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(76,59,77,0.16);
+      font-size: 13px;
+      outline: none;
+      background: #fffdfb;
+      transition: border-color 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+      font-family: "Noto Sans Rounded", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    input[type="text"]:focus,
+    input[type="tel"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: rgba(255, 143, 167, 0.75);
+      box-shadow: 0 0 0 1px rgba(255, 143, 167, 0.28);
+      background: #ffffff;
+    }
+
+    label {
+      font-size: 12px;
+      margin-bottom: 4px;
+      display: inline-block;
+    }
+
+    /* Layout */
+    .layout {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: "Quicksand", sans-serif;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff8ba7, #ffb86c);
+    }
+
+    /* Products */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .product-card {
+      border-radius: var(--radius-lg);
+      background: #fff;
+      padding: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.9);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 225, 181, 0.95);
+      box-shadow: 0 6px 12px rgba(255, 199, 147, 0.5);
+    }
+
+    .product-name {
+      font-size: 15px;
+      font-weight: 600;
+      font-family: "Quicksand", sans-serif;
+    }
+
+    /* 产品图片（卡片内） */
+    .product-image-wrapper {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff7fb;
+      margin-bottom: 8px;
+    }
+
+    .product-image {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.18s ease;
+    }
+
+    .product-image:hover {
+      transform: scale(1.03);
+    }
+
+    .badge-flavor {
+      font-size: 11px;
+      background: rgba(255,215,232,0.7);
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      display: inline-block;
+      font-family: "Quicksand", sans-serif;
+    }
+
+    .product-desc {
+      font-size: 12px;
+      opacity: 0.85;
+      font-family: "Noto Sans Rounded", sans-serif;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .product-note {
+      font-size: 11px;
+      opacity: 0.7;
+    }
+
+    .product-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+      gap: 8px;
+    }
+
+    .product-actions .btn-small:first-child {
+      background: rgba(255,255,255,0.9);
+      border: 1px dashed rgba(255, 143, 167, 0.4);
+      color: var(--text-main);
+    }
+
+    /* Cart Panel */
+    .panel {
+      background: #fff;
+      padding: 16px;
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 18px;
+      border: 1px solid rgba(255,255,255,0.9);
+    }
+
+    .panel h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .panel-sub {
+      font-size: 11px;
+      opacity: 0.7;
+      margin-bottom: 10px;
+    }
+
+    .cart-list {
+      background: #fff7fb;
+      padding: 10px;
+      border-radius: 14px;
+      max-height: 210px;
+      overflow: auto;
+      font-size: 13px;
+      border: 1px solid rgba(255, 215, 232, 0.7);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      gap: 10px;
+    }
+
+    .cart-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .cart-item-name {
+      font-size: 13px;
+    }
+
+    .cart-item-flavor {
+      font-size: 11px;
+      opacity: .65;
+    }
+
+    .qty-control {
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      justify-content: flex-end;
+    }
+
+    .qty-btn {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: none;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qty-btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.16);
+    }
+
+    .cart-footer {
+      display:flex;
+      justify-content:space-between;
+      align-items: center;
+      margin-top:8px;
+      font-size: 13px;
+    }
+
+    .cart-footer strong {
+      font-size: 15px;
+    }
+
+    .cart-empty {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    .order-form {
+      margin-top: 14px;
+      border-top: 1px dashed rgba(0,0,0,0.06);
+      padding-top: 12px;
+    }
+
+    .form-row {
+      margin-bottom: 8px;
+    }
+
+    .form-tip {
+      font-size: 11px;
+      opacity: 0.65;
+      margin-top: 2px;
+    }
+
+    /* Toast */
+    #toast {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 80%;
+      background: rgba(51, 51, 51, 0.93);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-size: 14px;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 99;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.02);
+    }
+
+    /* Footer */
+    .footer {
+      background: #fff7fb;
+      padding: 28px 16px;
+      margin-top: 40px;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 -8px 20px rgba(0,0,0,0.05);
+    }
+
+    .footer-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .footer-brand {
+      font-family: "Lobster", cursive;
+      font-size: 26px;
+      margin-bottom: 4px;
+    }
+
+    .footer-desc {
+      font-family: "Noto Sans Rounded";
+      font-size: 14px;
+      opacity: .75;
+      margin-bottom: 12px;
+    }
+
+    .ig-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #ff8bb0, #ffb86c);
+      color: #fff;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      box-shadow: 0 8px 16px rgba(255, 137, 166, 0.45);
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      opacity: .55;
+    }
+
+    /* 产品详情 Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: #fff;
+      width: 90%;
+      max-width: 460px;
+      padding: 22px;
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      position: relative;
+    }
+
+    #modalClose {
+      position: absolute;
+      right: 14px;
+      top: 6px;
+      font-size: 26px;
+      cursor: pointer;
+      opacity: .6;
+    }
+    #modalClose:hover {
+      opacity: 1;
+    }
+
+    /* Modal 里的多图主图 + 缩略图 */
+    .modal-main-image-wrapper {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff7fb;
+      margin-bottom: 12px;
+    }
+
+    .modal-main-image {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .modal-thumbs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+      overflow-x: auto;
+    }
+
+    .modal-thumb {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      flex: 0 0 auto;
+      object-fit: cover;
+      cursor: pointer;
+      opacity: 0.6;
+      border: 2px solid transparent;
+      background: #fff7fb;
+    }
+
+    .modal-thumb.active {
+      opacity: 1;
+      border-color: #ff8ba7;
+    }
+
+    .modal-title {
+      font-family: "Quicksand", sans-serif;
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    .modal-text {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+
+    .modal-price {
+      font-weight: 600;
+      font-size: 18px;
+      margin: 10px 0 16px;
+    }
+
+    /* 国家码下拉选单：触控优化 */
+    #countryCode {
+      min-width: 92px;
+      padding: 10px 10px;
+      font-size: 14px;
+      border-radius: 10px;
+      background: #fffdfb;
+      border: 1px solid rgba(76,59,77,0.18);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Responsive：手机优化 */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .brand {
+        justify-content: center;
+      }
+
+      .brand-logo {
+        width: 78px;
+        height: 78px;
+      }
+
+      .pill {
+        margin-top: 4px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 22px 16px;
+        margin-top: 10px;
+      }
+
+      .hero-main {
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero-title {
+        font-size: 26px;
+      }
+
+      .hero-tags {
+        justify-content: center;
+      }
+
+      .hero-actions {
+        align-items: center;
+      }
+
+      .hero-note {
+        text-align: center;
+      }
+
+      .hero-side {
+        margin-top: 12px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 16px;
+      }
+
+      .panel {
+        position: static;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page {
+        padding-inline: 12px;
+      }
+
+      .hero-title {
+        font-size: 24px;
+      }
+
+      .hero-sub {
+        font-size: 13px;
+      }
+
+      .hero-dynamic-text {
+        font-size: 18px;
+      }
+
+      .section-title {
+        font-size: 15px;
+      }
+
+      #countryCode {
+        min-width: 110px;
+        padding: 12px 12px;
+        font-size: 15px;
+      }
+
+      #customerPhone {
+        padding: 12px 12px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- Header with Logo -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo">
+        <img src="missbutter_logo_transparentA.png" alt="MissButter Candies" />
+      </div>
+      <div class="brand-text">
+        <h1>Miss Butter Candies</h1>
+        <span>原味 & 蔓越莓</span>
+      </div>
+    </div>
+    <div class="pill">
+      <span class="pill-dot"></span>
+      今日也要软软甜甜的
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-main">
+      <h2 class="hero-title">
+        把<span>牛轧糖</span>装进一颗颗会微笑的日常里。
+      </h2>
+      <p class="hero-sub">
+        Miss Butter Candies 手作牛轧糖，适合送礼、派对、小确幸。<br>
+        每一盒都是当天小量制作，软软甜甜不过腻。
+      </p>
+
+      <div class="hero-tags">
+        <span class="hero-tag">🎀 手作小量制作</span>
+        <span class="hero-tag">🍬 透明糖果礼盒包装</span>
+        <span class="hero-tag">✨ 原味 & 蔓越莓双口味</span>
+      </div>
+
+      <div class="hero-actions">
+        <div id="scrollToProducts" class="hero-dynamic-text">
+          立即选购牛轧糖
+        </div>
+        <span class="hero-note">价钱以马来西亚令吉（RM）计算，下单后会由店主与你确认。</span>
+      </div>
+    </div>
+
+    <aside class="hero-side">
+      <div class="hero-side-title">
+        <span class="icon">🍱</span>
+        订单流程小提醒
+      </div>
+      <ul class="hero-side-list">
+        <li>先选好要的礼盒数量，再填写姓名与联络方式。</li>
+        <li>点击「提交订单」，系统会把你的订单记录在后台。</li>
+        <li>店主会通过 WhatsApp / 电话确认口味、数量与送货细节。</li>
+        <li>确认后才安排付款与配送，不会自动扣款。</li>
+      </ul>
+    </aside>
+  </section>
+
+  <!-- Layout -->
+  <main class="layout">
+
+    <!-- Products -->
+    <section id="products">
+      <h3 class="section-title">选购产品</h3>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <!-- Cart Panel -->
+    <aside class="panel">
+
+      <h3>我的选购</h3>
+      <p class="panel-sub">查看你目前选了哪些礼盒，可以在这里调整数量或清空。</p>
+
+      <div class="cart-list" id="cartList">
+        <p class="cart-empty">目前还没有商品 🍬 可以先从左边选一盒试试～</p>
+      </div>
+
+      <div class="cart-footer">
+        <span>预计小计</span>
+        <span><strong id="cartTotal">RM0.00</strong></span>
+      </div>
+
+      <button id="clearCartBtn" class="btn btn-outline" style="width:100%;margin-top:8px;">
+        清空全部商品
+      </button>
+
+      <!-- Order Form -->
+      <form class="order-form" id="orderForm">
+        <h4 style="margin-bottom:8px;">填写订单资料</h4>
+
+        <div class="form-row">
+          <label>姓名*</label>
+          <input type="text" id="customerName" required />
+        </div>
+
+        <div class="form-row">
+          <label>电话（WhatsApp）*</label>
+          <div style="display:flex; gap:6px;">
+            <select id="countryCode">
+              <option value="+60" selected>🇲🇾 +60</option>
+              <option value="+65">🇸🇬 +65</option>
+              <option value="+852">🇭🇰 +852</option>
+              <option value="+886">🇹🇼 +886</option>
+              <option value="+62">🇮🇩 +62</option>
+              <option value="+81">🇯🇵 +81</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+            </select>
+            <input
+              type="tel"
+              id="customerPhone"
+              placeholder="输入你的号码（不需要开头的 0）"
+              required
+              style="flex:1"
+            />
+          </div>
+          <div class="form-tip">选择国家，再输入号码。如马来西亚：0177xxxxxx → 填 177xxxxxx</div>
+        </div>
+
+        <div class="form-row">
+          <label>地址（选填）</label>
+          <input
+            type="text"
+            id="customerAddress"
+            placeholder="例如：收件人地址、门牌、邮区（如果是面交可留空）"
+          />
+        </div>
+
+        <div class="form-row">
+          <label>Email（选填）</label>
+          <input type="email" id="customerEmail" placeholder="如果习惯用 Email 联络，也可以留给我们～" />
+        </div>
+
+        <div class="form-row">
+          <label>备注（选填，最多 200 字）</label>
+          <textarea
+            id="customerRemark"
+            rows="3"
+            maxlength="200"
+            placeholder="例如：不吃坚果、想要简单送礼小卡、预计收货时间等"
+          ></textarea>
+          <div class="form-tip">
+            还可输入 <span id="remarkCount">200</span> 字。
+          </div>
+        </div>
+
+        <button class="btn btn-primary" style="width:100%;margin-top:10px;">
+          提交订单（不付款）
+        </button>
+
+      </form>
+
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">MissButter Candies</div>
+      <div class="footer-desc">
+        手作软软牛轧糖 · 原味 & 蔓越莓 · 马来西亚制作
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/miss.butter.candies/" target="_blank" class="ig-button">
+          🌸 追踪我们的 Instagram
+        </a>
+      </div>
+      <div class="footer-copy">
+        © 2025 MissButter Candies. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<!-- 产品详情 Modal（多图模式） -->
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span id="modalClose">&times;</span>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxzky-h1o0pkmg7UVd5ReC-XFqHvS794eHFg_jivPPwZHsfclCtPF1TTAoOy5TXNxwZHg/exec";
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 2000);
+}
+
+const MAX_QTY = 10;
+
+// 目前测试：所有产品都用同一张缩图 + 5 张大图 images/original-1.jpg
+const TEST_IMAGE = "images/original-1.jpg";
+
+const products = [
+  {
+    id: "original-box",
+    name: "原味牛轧糖礼盒",
+    flavor: "Original",
+    tag: "热卖",
+    desc: "经典奶香搭配杏仁颗粒，软软Q弹、越嚼越香。适合第一次尝试 Miss Butter Candies 的你。",
+    price: 18.9,
+    image: TEST_IMAGE,
+    bigImages: [
+      TEST_IMAGE,
+      TEST_IMAGE,
+      TEST_IMAGE,
+      TEST_IMAGE,
+      TEST_IMAGE
+    ]
+  },
+  {
+    id: "cranberry-box",
+    name: "蔓越莓牛轧糖礼盒",
+    flavor: "Cranberry",
+    tag: "打卡必备",
+    desc: "微酸蔓越莓配上奶香，粉嫩颜值超适合送礼拍照，是少女心必收的一盒小甜品。",
+    price: 19.9,
+    image: TEST_IMAGE,
+    bigImages: [
+      TEST_IMAGE,
+      TEST_IMAGE,
+      TEST_IMAGE,
+      TEST_IMAGE,
+      TEST_IMAGE
+    ]
+  },
+  {
+    id: "mix-box",
+    name: "原味+蔓越莓综合礼盒",
+    flavor: "Mix",
+    tag: "推荐组合",
+    desc: "一盒就能吃到两种口味，适合分享、也适合选择困难症。聚会、送礼都很安全不出错。",
+    price: 20.9,
+    image: TEST_IMAGE,
+    bigImages: [
+      TEST_IMAGE,
+      TEST_IMAGE,
+      TEST_IMAGE,
+      TEST_IMAGE,
+      TEST_IMAGE
+    ]
+  }
+];
+
+// 根据 cart 计算三种口味的数量
+function getFlavorQty() {
+  let qtyOriginal = 0;
+  let qtyCranberry = 0;
+  let qtyMix = 0;
+
+  Object.values(cart).forEach(({ product, qty }) => {
+    if (product.id === "original-box") {
+      qtyOriginal += qty;
+    } else if (product.id === "cranberry-box") {
+      qtyCranberry += qty;
+    } else if (product.id === "mix-box") {
+      qtyMix += qty;
+    }
+  });
+
+  return { qtyOriginal, qtyCranberry, qtyMix };
+}
+
+const cart = {};
+const productGrid = document.getElementById("productGrid");
+const cartList = document.getElementById("cartList");
+const cartTotalEl = document.getElementById("cartTotal");
+const orderForm = document.getElementById("orderForm");
+
+const modal = document.getElementById("productModal");
+const modalBody = document.getElementById("modalBody");
+const modalClose = document.getElementById("modalClose");
+
+const remarkInput = document.getElementById("customerRemark");
+const remarkCountEl = document.getElementById("remarkCount");
+
+if (remarkInput && remarkCountEl) {
+  remarkInput.addEventListener("input", () => {
+    const max = 200;
+    const len = remarkInput.value.length;
+    const left = max - len;
+    remarkCountEl.textContent = left >= 0 ? left : 0;
+  });
+}
+
+function getCartTotal() {
+  let total = 0;
+  Object.values(cart).forEach(({ product, qty }) => {
+    total += product.price * qty;
+  });
+  return total;
+}
+
+/* ===== 多图 Modal 逻辑 ===== */
+function renderModalContent(product, activeIndex) {
+  const safeIndex = Math.max(0, Math.min(activeIndex, product.bigImages.length - 1));
+
+  const thumbsHTML = product.bigImages.map((src, i) => `
+    <img
+      src="${src}"
+      alt="${product.name} ${i + 1}"
+      class="modal-thumb ${i === safeIndex ? "active" : ""}"
+      data-index="${i}"
+    />
+  `).join("");
+
+  modalBody.innerHTML = `
+    <div class="modal-main-image-wrapper">
+      <img
+        src="${product.bigImages[safeIndex]}"
+        alt="${product.name}"
+        class="modal-main-image"
+      />
+    </div>
+    <div class="modal-thumbs">
+      ${thumbsHTML}
+    </div>
+    <h2 class="modal-title">${product.name}</h2>
+    <p class="modal-text">
+      口味：${product.flavor === "Mix" ? "原味 + 蔓越莓" : product.flavor}
+    </p>
+    <p class="modal-text">${product.desc}</p>
+    <p class="modal-price">RM${product.price.toFixed(2)}</p>
+    <button class="btn btn-primary" id="modalAddToCart">
+      加入购物车
+    </button>
+  `;
+
+  // 缩略图点击切换大图
+  modalBody.querySelectorAll(".modal-thumb").forEach(img => {
+    img.addEventListener("click", () => {
+      const idx = Number(img.getAttribute("data-index")) || 0;
+      renderModalContent(product, idx);
+    });
+  });
+
+  // Modal 内的「加入购物车」
+  const addBtn = document.getElementById("modalAddToCart");
+  if (addBtn) {
+    addBtn.addEventListener("click", () => {
+      addToCart(product.id);
+    });
+  }
+}
+
+function showProductDetail(product, startIndex = 0) {
+  if (!product) return;
+  renderModalContent(product, startIndex);
+  modal.style.display = "flex";
+}
+
+modalClose.onclick = () => {
+  modal.style.display = "none";
+};
+modal.onclick = (e) => {
+  if (e.target === modal) modal.style.display = "none";
+};
+
+/* ===== 渲染产品卡片 ===== */
+function renderProducts() {
+  productGrid.innerHTML = "";
+  products.forEach((p) => {
+    const card = document.createElement("article");
+    card.className = "product-card";
+
+    card.innerHTML = `
+      <span class="product-tag">${p.tag}</span>
+
+      <div class="product-image-wrapper">
+        <img
+          src="${p.image}"
+          alt="${p.name}"
+          class="product-image"
+          data-image-id="${p.id}"
+        />
+      </div>
+
+      <div class="product-name">${p.name}</div>
+      <div class="badge-flavor">${p.flavor === "Mix" ? "原味 + 蔓越莓" : p.flavor}</div>
+      <p class="product-desc">${p.desc}</p>
+      <div class="product-meta">
+        <strong class="product-price">RM${p.price.toFixed(2)}</strong>
+        <span class="product-note">约 1 盒 / 约 20～24 颗</span>
+      </div>
+      <div class="product-actions">
+        <button class="btn btn-small" data-detail-id="${p.id}">查看详情</button>
+        <button class="btn btn-primary btn-small" data-id="${p.id}">直接加入</button>
+      </div>
+    `;
+
+    productGrid.appendChild(card);
+  });
+
+  productGrid.addEventListener("click", (e) => {
+    const detailBtn = e.target.closest("button[data-detail-id]");
+    const addBtn = e.target.closest("button[data-id]");
+    const imgClick = e.target.closest("img[data-image-id]");
+
+    // 点击「查看详情」
+    if (detailBtn) {
+      const id = detailBtn.getAttribute("data-detail-id");
+      const product = products.find(p => p.id === id);
+      showProductDetail(product, 0);
+      return;
+    }
+
+    // 点击图片 → 打开多图大图
+    if (imgClick) {
+      const id = imgClick.getAttribute("data-image-id");
+      const product = products.find(p => p.id === id);
+      showProductDetail(product, 0);
+      return;
+    }
+
+    // 直接加入
+    if (addBtn) {
+      const id = addBtn.getAttribute("data-id");
+      addToCart(id);
+      return;
+    }
+  });
+}
+
+/* ===== 购物车逻辑 ===== */
+function addToCart(productId) {
+  const product = products.find(p => p.id === productId);
+  if (!product) return;
+
+  if (!cart[productId]) cart[productId] = { product, qty: 0 };
+
+  if (cart[productId].qty >= MAX_QTY) {
+    showToast(`每个商品最多只能选购 ${MAX_QTY} 盒噢 🍬`);
+    return;
+  }
+
+  cart[productId].qty += 1;
+  renderCart();
+  showToast("已加入选购列表～");
+}
+
+function changeQty(productId, delta) {
+  if (!cart[productId]) return;
+
+  if (delta > 0 && cart[productId].qty >= MAX_QTY) {
+    showToast(`每个商品最多只能选购 ${MAX_QTY} 盒噢 🍬`);
+    return;
+  }
+
+  cart[productId].qty += delta;
+
+  if (cart[productId].qty <= 0) {
+    delete cart[productId];
+  }
+
+  renderCart();
+}
+
+function renderCart() {
+  const items = Object.values(cart);
+  cartList.innerHTML = "";
+
+  if (items.length === 0) {
+    cartList.innerHTML = `<p class="cart-empty">目前还没有商品 🍬 可以先从左边选一盒试试～</p>`;
+    cartTotalEl.textContent = "RM0.00";
+    return;
+  }
+
+  items.forEach(({ product, qty }) => {
+    const row = document.createElement("div");
+    row.className = "cart-item";
+
+    row.innerHTML = `
+      <div>
+        <div class="cart-item-name">${product.name}</div>
+        <div class="cart-item-flavor">
+          ${product.flavor === "Mix" ? "原味 + 蔓越莓" : product.flavor}
+        </div>
+      </div>
+
+      <div style="text-align:right;">
+        <strong>${qty} 盒</strong>
+        <div class="qty-control">
+          <button class="qty-btn" data-act="minus" data-id="${product.id}">-</button>
+          <span style="min-width:16px;text-align:center;">${qty}</span>
+          <button class="qty-btn" data-act="plus" data-id="${product.id}">+</button>
+        </div>
+      </div>
+    `;
+
+    cartList.appendChild(row);
+  });
+
+  const total = getCartTotal();
+  cartTotalEl.textContent = "RM" + total.toFixed(2);
+
+  cartList.querySelectorAll(".qty-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-id");
+      const act = btn.getAttribute("data-act");
+      changeQty(id, act === "plus" ? 1 : -1);
+    });
+  });
+}
+
+/* 清空购物车 */
+document.getElementById("clearCartBtn").addEventListener("click", () => {
+  if (Object.keys(cart).length === 0) {
+    showToast("购物车里没有商品噢 🍬");
+    return;
+  }
+
+  if (confirm("确定要清空全部商品吗？")) {
+    for (const key in cart) delete cart[key];
+    renderCart();
+    showToast("已清空购物车");
+  }
+});
+
+/* 提交订单 → 送到 Google Apps Script */
+orderForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("customerName").value.trim();
+  const countryCode = document.getElementById("countryCode").value;
+  let rawPhone = document.getElementById("customerPhone").value.trim();
+  const email = document.getElementById("customerEmail").value.trim();
+  const address = document.getElementById("customerAddress").value.trim();
+  const remark = document.getElementById("customerRemark").value.trim();
+
+  rawPhone = rawPhone.replace(/^0+/, "");
+  const phone = countryCode + rawPhone;
+
+  if (!name || !rawPhone) {
+    showToast("请先填写姓名和电话噢 🍬");
+    return;
+  }
+
+  if (Object.keys(cart).length === 0) {
+    showToast("还没有选择商品，可以先选购几盒牛轧糖～");
+    return;
+  }
+
+  const items = Object.values(cart).map(({ product, qty }) => {
+    return `${product.name}（${product.flavor === "Mix" ? "原味+蔓越莓" : product.flavor}） x ${qty} 盒`;
+  });
+
+  const total = getCartTotal();
+
+  // 三种口味数量
+  const { qtyOriginal, qtyCranberry, qtyMix } = getFlavorQty();
+
+  const payload = {
+    name,
+    phone,
+    email,
+    address,
+    remark,
+    items: items.join("\\n"),
+    total: Number(total),
+    currency: "MYR",
+    qtyOriginal,
+    qtyCranberry,
+    qtyMix,
+    timestamp: new Date().toISOString(),
+    source: "MissButter Candies 订单页"
+  };
+
+  fetch(GOOGLE_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  })
+  .then(() => {
+  showToast("订单已送出，我们会尽快联络你 🧡");
+
+  // 重置表单
+  orderForm.reset();
+  if (remarkCountEl) remarkCountEl.textContent = "200";
+
+  // 清空购物车
+  for (const key in cart) delete cart[key];
+  renderCart();
+
+  // ⭐ 延迟 0.8 秒 → 跳转至 thankyou.html
+  setTimeout(() => {
+    window.location.href = "thankyou.html";
+  }, 800);
+})
+  .catch((err) => {
+    console.error(err);
+    alert("提交时遇到一点问题，请稍后再试，或截图发给店主 🙏");
+  });
+});
+
+/* Hero CTA → 滚动到产品区 */
+document.getElementById("scrollToProducts").addEventListener("click", () => {
+  document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+});
+
+/* 初始化 */
+renderProducts();
+renderCart();
+</script>
+</body>
+</html>
