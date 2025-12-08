@@ -2,7 +2,7 @@
 <html lang="zh-Hans">
 <head>
   <meta charset="UTF-8" />
-  <title>MissButter Candies｜牛轧糖选购页</title>
+  <title>Miss Butter Candies｜牛轧糖选购页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- 品牌字体：Lobster + Quicksand + Noto Sans Rounded + Ma Shan Zheng -->
@@ -397,6 +397,72 @@
     }
 
     /* Products */
+
+<!-- 🔰 MissButter Candies Hero Banner 开始 -->
+<section class="mb-hero" id="home">
+  <div class="mb-hero-inner">
+
+    <!-- 左侧：Logo + 文案 -->
+    <div class="mb-hero-text">
+      <!-- 圆形 Logo -->
+      <div class="mb-hero-logo-wrap">
+        <img src="missbutter_logo_transparentA.png"
+             alt="MissButter Candies Logo"
+             class="mb-hero-logo">
+      </div>
+
+      <p class="mb-hero-kicker">
+        手作牛轧糖 · 小小一颗，满满心意
+      </p>
+
+      <h1 class="mb-hero-title">
+        让「日常」也有一点<span class="mb-hero-highlight">仪式感</span>
+      </h1>
+
+      <p class="mb-hero-subtitle">
+        精选坚果与奶香，低温手工翻炒，<br>
+        每一盒都是适合送礼、聚会、宠爱自己的小幸福。
+      </p>
+
+      <div class="mb-hero-actions">
+        <a href="#products" class="mb-btn-primary">
+          <span class="mb-btn-main-text">立即选购牛轧糖</span>
+          <span class="mb-btn-pulse-dot"></span>
+        </a>
+
+        <a href="#about" class="mb-btn-secondary">
+          了解 MissButter 的故事
+        </a>
+      </div>
+
+      <div class="mb-hero-note">
+        🎁 支持小量送礼｜节日公司团购可洽询
+      </div>
+    </div>
+
+    <!-- 右侧：产品展示图 -->
+    <div class="mb-hero-visual">
+      <div class="mb-hero-card">
+        <!-- 把图片换成你的牛轧糖主图 -->
+        <img src="your-product-image.jpg"
+             alt="MissButter Candies 牛轧糖"
+             class="mb-hero-product-img">
+
+        <div class="mb-hero-tag-group">
+          <span class="mb-hero-tag">原味牛轧糖</span>
+          <span class="mb-hero-tag">蔓越莓牛轧糖</span>
+        </div>
+
+        <div class="mb-hero-floating-badge">
+          热卖推荐 💗
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- 🔰 MissButter Candies Hero Banner 结束 -->
+
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -892,7 +958,7 @@
       </div>
       <div class="brand-text">
         <h1>Miss Butter Candies</h1>
-        <span>原味 & 蔓越莓</span>
+        <span>手作软软牛轧糖</span>
       </div>
     </div>
     <div class="pill">
@@ -1040,9 +1106,9 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-brand">MissButter Candies</div>
+      <div class="footer-brand">Miss Butter Candies</div>
       <div class="footer-desc">
-        手作软软牛轧糖 · 原味 & 蔓越莓 · 马来西亚制作
+        手作软软牛轧糖 · 马来西亚制作
       </div>
       <div class="footer-social">
         <a href="https://www.instagram.com/miss.butter.candies/" target="_blank" class="ig-button">
@@ -1446,7 +1512,7 @@ orderForm.addEventListener("submit", function (e) {
     email,
     address,
     remark,
-    items: items.join("\\n"),
+    items: items.join("\n"),
     total: Number(total),
     currency: "MYR",
     qtyOriginal,
