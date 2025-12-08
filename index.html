@@ -1107,10 +1107,11 @@ const products = [
     tag: "热卖",
     desc: "经典奶香搭配杏仁颗粒，软软Q弹、越嚼越香。",
     price: 18.9,
-    images: [
-      "images/original-1.jpg",
-      "images/original-2.jpg",
-      "images/original-3.jpg"
+    images: ["images/original-1.jpg"],
+    bigImages: [
+      "images/original-big-1.jpg",
+      "images/original-big-2.jpg",
+      "images/original-big-3.jpg"
     ]
   },
   {
@@ -1120,9 +1121,10 @@ const products = [
     tag: "打卡必备",
     desc: "微酸蔓越莓配上奶香，粉嫩颜值超适合送礼拍照。",
     price: 19.9,
-    images: [
-      "images/cranberry-1.jpg",
-      "images/cranberry-2.jpg"
+    images: ["images/cranberry-1.jpg"],
+    bigImages: [
+      "images/cranberry-big-1.jpg",
+      "images/cranberry-big-2.jpg"
     ]
   },
   {
@@ -1132,11 +1134,12 @@ const products = [
     tag: "推荐组合",
     desc: "一盒吃到两种口味，适合分享、聚会与送礼。",
     price: 20.9,
-    images: [
-      "images/mix-1.jpg",
-      "images/mix-2.jpg",
-      "images/mix-3.jpg",
-      "images/mix-4.jpg"
+    images: ["images/mix-1.jpg"],
+    bigImages: [
+      "images/mix-big-1.jpg",
+      "images/mix-big-2.jpg",
+      "images/mix-big-3.jpg",
+      "images/mix-big-4.jpg"
     ]
   }
 ];
@@ -1182,73 +1185,64 @@ function getCartTotal() {
   return total;
 }
 
-function renderModalContent() {
-  if (!currentProduct) return;
-  const imgSrc = currentSliderImages[currentSliderIndex] || currentProduct.image;
-
-  const dotsHtml = currentSliderImages.map((_, idx) => `
-    <span class="modal-dot ${idx === currentSliderIndex ? "active" : ""}"></span>
-  `).join("");
-
-  modalBody.innerHTML = `
-    <div class="modal-image-wrapper">
-      <div class="modal-image">
-        <img
-          src="${imgSrc}"
-          alt="${currentProduct.name}"
-          class="modal-image-inner"
-        />
-      </div>
-      ${
-        currentSliderImages.length > 1
-        ? `
-          <button class="modal-nav-btn modal-nav-btn-left" onclick="changeSlide(-1)">‹</button>
-          <button class="modal-nav-btn modal-nav-btn-right" onclick="changeSlide(1)">›</button>
-        `
-        : ""
-      }
-    </div>
-
-    ${
-      currentSliderImages.length > 1
-        ? `<div class="modal-dots">${dotsHtml}</div>`
-        : ""
-    }
-
-    <h2 style="font-family:'Ma Shan Zheng','Noto Sans Rounded',sans-serif;font-weight:400;margin-bottom:10px;font-size:22px;">
-      ${currentProduct.name}
-    </h2>
-    <p style="font-size:14px;opacity:.8;margin-bottom:8px;">
-      口味：${currentProduct.flavor === "Mix" ? "原味 + 蔓越莓" : currentProduct.flavor}
-    </p>
-    <p style="font-size:14px;line-height:1.6;margin-bottom:12px;">
-      ${currentProduct.desc}
-    </p>
-    <p style="font-weight:600;font-size:18px;margin-bottom:18px;">
-      RM${currentProduct.price.toFixed(2)}
-    </p>
-    <button class="btn btn-primary" onclick="addToCart('${currentProduct.id}')">
-      加入购物车
-    </button>
-  `;
-}
+let currentProduct = null;
+let currentSliderImages = [];
+let currentSliderIndex = 0;
 
 function showProductDetail(product) {
-  if (!product) return;
   currentProduct = product;
-  currentSliderImages = (product.bigImages && product.bigImages.length > 0)
-    ? product.bigImages
-    : [product.image];
+
+  // 使用 bigImages 如果有，否则 fallback 到 images
+  currentSliderImages =
+    (product.bigImages && product.bigImages.length > 0)
+      ? product.bigImages
+      : product.images;
+
   currentSliderIndex = 0;
   renderModalContent();
   modal.style.display = "flex";
 }
 
-function changeSlide(delta) {
-  if (!currentSliderImages.length) return;
+function changeSlide(dir) {
   const len = currentSliderImages.length;
-  currentSliderIndex = (currentSliderIndex + delta + len) % len;
+  currentSliderIndex = (currentSliderIndex + dir + len) % len;
   renderModalContent();
+}
+
+function renderModalContent() {
+  const imgSrc = currentSliderImages[currentSliderIndex];
+
+  const dots = currentSliderImages
+    .map((_, i) => `<span class="modal-dot ${i === currentSliderIndex ? 'active' : ''}"></span>`)
+    .join("");
+
+  modalBody.innerHTML = `
+    <div class="modal-image-wrapper">
+      <div class="modal-image">
+        <img src="${imgSrc}" class="modal-image-inner" />
+      </div>
+
+      ${
+        currentSliderImages.length > 1
+          ? `
+            <button class="modal-nav-btn modal-nav-btn-left" onclick="changeSlide(-1)">‹</button>
+            <button class="modal-nav-btn modal-nav-btn-right" onclick="changeSlide(1)">›</button>
+          `
+          : ""
+      }
+    </div>
+
+    ${currentSliderImages.length > 1 ? `<div class="modal-dots">${dots}</div>` : ""}
+
+    <h2 class="modal-title">${currentProduct.name}</h2>
+    <p class="modal-flavor">${currentProduct.flavor}</p>
+    <p class="modal-desc">${currentProduct.desc}</p>
+    <p class="modal-price">RM${currentProduct.price.toFixed(2)}</p>
+
+    <button class="btn btn-primary" onclick="addToCart('${currentProduct.id}')">
+      加入购物车
+    </button>
+  `;
 }
 
 modalClose.onclick = () => { modal.style.display = "none"; };
